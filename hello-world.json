@@ -1,0 +1,32 @@
+{
+  "id": "g1/hello-world-service",
+  "cmd": "java -Des.host=elastic.marathon.mesos -Des.port=9350 -jar hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar",
+  "cpus": 1,
+  "mem": 256,
+  "disk": 512,  
+  "instances": 1,
+  "fetch": [
+    {
+      "uri": "https://github.com/ariellev/dcos/hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar"
+    }
+  ],
+  "volumes": [
+    {
+      "containerPath": "/var/hello-world-service",
+      "mode": "RW", 
+      "persistent": {
+        "size": 100
+      }
+    }
+  ],
+  "portDefinitions": [
+    {
+      "protocol": "tcp",
+      "port": 8080,
+      "labels": {
+        "VIP_0": "/hello-world-service:28080"
+      },
+      "name": "hello-world-service"
+    }
+  ]
+}
