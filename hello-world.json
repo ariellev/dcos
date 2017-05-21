@@ -7,7 +7,7 @@
   "instances": 1,
   "fetch": [
     {
-      "uri": "https://github.com/ariellev/dcos/hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar"
+      "uri": "https://raw.githubusercontent.com/ariellev/dcos/master/hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar"
     }
   ],
   "volumes": [
